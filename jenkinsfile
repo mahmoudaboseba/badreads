@@ -29,7 +29,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
                     sh "docker push mahmoud180/client:${env.BUILD_NUMBER}"
-                    sh "docker push mohamedswelam/server:${env.BUILD_ID}"
+                    sh "docker push mahmoud180/server:${env.BUILD_ID}"
                     
                 }
             }
